@@ -9,18 +9,64 @@
   <script>
     // Rock Paper Scissors
 
-    // Computer chooses option (rock, paper, or scissors)
+    // picks a game choice at random for computer to use
     function computerPlay() {
       const options = ['rock', 'paper', 'scissors'];
       // get a random number back between 0-2
-      const random = Math.floor(Math.random() * 3);
+      const random = Math.floor(Math.random() * options.length);
       // return random choice from array
       return options[random];
     }
 
-    // Player chooses their options
+    // runs a round of rock, paper, scissors
+    function playRound(playerChoice, computerChoice) {
+      const pChoice = playerChoice.toLowerCase();
+      const cChoice = computerChoice.toLowerCase();
+      let outcomeMessage = '';
 
-    // Compare results and decide the outcome
+      console.log(`Player choice: ${pChoice}`);
+      console.log(`Computer choice: ${cChoice}`);
+
+      if (pChoice !== 'rock' || pChoice !== 'rock' || pChoice !== 'rock') {
+        outcomeMessage = 'No result';
+        return outcomeMessage;
+      };
+
+      // compare choices to see who wins round
+      if (
+        pChoice === 'rock' && cChoice === 'scissors' ||
+        pChoice === 'paper' && cChoice === 'rock' ||
+        pChoice === 'scissors' && cChoice === 'paper'
+      ) {
+        // player wins
+        outcomeMessage = 'You win!';
+      } else if (
+        pChoice === 'rock' && cChoice === 'paper' ||
+        pChoice === 'paper' && cChoice === 'scissors' ||
+        pChoice === 'scissors' && cChoice === 'rock'
+      ) {
+        // player loses
+        outcomeMessage = 'You lose!';
+      } else {
+        // tie game
+        outcomeMessage = 'Result is a tie.';
+      }
+
+      return outcomeMessage;
+    }
+
+    // run however many rounds and determine a winner for rock, paper, scissors
+    function game(totalRounds) {
+      for (var i = 1; i <= totalRounds; i++) {
+        const computerSelection = computerPlay();
+        const playerSelection = prompt('Please choose Rock, Paper, or Scissors', 'Rock');
+        console.log(`Round ${i}:`);
+        console.log(playRound(playerSelection, computerSelection));
+      }
+    }
+
+    // run game and set rounds in function argument
+    game(5);
   </script>
 </body>
 </html>
