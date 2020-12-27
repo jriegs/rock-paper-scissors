@@ -27,11 +27,6 @@
       console.log(`Player choice: ${pChoice}`);
       console.log(`Computer choice: ${cChoice}`);
 
-      if (pChoice !== 'rock' || pChoice !== 'rock' || pChoice !== 'rock') {
-        outcomeMessage = 'No result';
-        return outcomeMessage;
-      };
-
       // compare choices to see who wins round
       if (
         pChoice === 'rock' && cChoice === 'scissors' ||
