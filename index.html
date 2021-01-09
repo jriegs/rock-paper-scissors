@@ -4,64 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock, Paper, Scissors!</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
 </head>
 <body>
+
+  <h1>Rock, Paper, Scissors!</h1>
+  
+  <div class="game">
+
+    <div class="scores">
+      <div class="scores__player">
+        <div class="scores__text">Player Score:</div>
+        <div class="scores__value">0</div>
+      </div>
+      <div class="scores__computer">
+        <div class="scores__text">Computer Score:</div>
+        <div class="scores__value">0</div>
+      </div>
+    </div>
+
+    <div class="game__instructions">
+      <h2>Select your choice to start the game!</h2>
+    </div>
+
+    <div class="game__controls"> 
+      <button class="btn js-rock">Rock</button>
+      <button class="btn js-paper">Paper</button>
+      <button class="btn js-scissors">Scissors</button>
+    </div>
+
+    <div class="game__current-results"></div>
+    
+    <div class="game__previous-results">
+      <h3>Previous Rounds:</h3>
+    </div>
+
+  </div>
+
+
   <script>
-    // Rock Paper Scissors
+    // // Rock Paper Scissors
 
-    // picks a game choice at random for computer to use
-    function computerPlay() {
-      const options = ['rock', 'paper', 'scissors'];
-      // get a random number back between 0-2
-      const random = Math.floor(Math.random() * options.length);
-      // return random choice from array
-      return options[random];
-    }
+    // // picks a game choice at random for computer to use
+    // function computerPlay() {
+    //   const options = ['rock', 'paper', 'scissors'];
+    //   // get a random number back between 0-2
+    //   const random = Math.floor(Math.random() * options.length);
+    //   // return random choice from array
+    //   return options[random];
+    // }
 
-    // runs a round of rock, paper, scissors
-    function playRound(playerChoice, computerChoice) {
-      const pChoice = playerChoice.toLowerCase();
-      const cChoice = computerChoice.toLowerCase();
-      let outcomeMessage = '';
+    // // runs a round of rock, paper, scissors
+    // function playRound(playerChoice, computerChoice) {
+    //   const pChoice = playerChoice.toLowerCase();
+    //   const cChoice = computerChoice.toLowerCase();
+    //   let outcomeMessage = '';
 
-      console.log(`Player choice: ${pChoice}`);
-      console.log(`Computer choice: ${cChoice}`);
+    //   console.log(`Player choice: ${pChoice}`);
+    //   console.log(`Computer choice: ${cChoice}`);
 
-      // compare choices to see who wins round
-      if (
-        pChoice === 'rock' && cChoice === 'scissors' ||
-        pChoice === 'paper' && cChoice === 'rock' ||
-        pChoice === 'scissors' && cChoice === 'paper'
-      ) {
-        // player wins
-        outcomeMessage = 'You win!';
-      } else if (
-        pChoice === 'rock' && cChoice === 'paper' ||
-        pChoice === 'paper' && cChoice === 'scissors' ||
-        pChoice === 'scissors' && cChoice === 'rock'
-      ) {
-        // player loses
-        outcomeMessage = 'You lose!';
-      } else {
-        // tie game
-        outcomeMessage = 'Result is a tie.';
-      }
+    //   // compare choices to see who wins round
+    //   if (
+    //     pChoice === 'rock' && cChoice === 'scissors' ||
+    //     pChoice === 'paper' && cChoice === 'rock' ||
+    //     pChoice === 'scissors' && cChoice === 'paper'
+    //   ) {
+    //     // player wins
+    //     outcomeMessage = 'You win!';
+    //   } else if (
+    //     pChoice === 'rock' && cChoice === 'paper' ||
+    //     pChoice === 'paper' && cChoice === 'scissors' ||
+    //     pChoice === 'scissors' && cChoice === 'rock'
+    //   ) {
+    //     // player loses
+    //     outcomeMessage = 'You lose!';
+    //   } else {
+    //     // tie game
+    //     outcomeMessage = 'Result is a tie.';
+    //   }
 
-      return outcomeMessage;
-    }
+    //   return outcomeMessage;
+    // }
 
-    // run however many rounds and determine a winner for rock, paper, scissors
-    function game(totalRounds) {
-      for (var i = 1; i <= totalRounds; i++) {
-        const computerSelection = computerPlay();
-        const playerSelection = prompt('Please choose Rock, Paper, or Scissors', 'Rock');
-        console.log(`Round ${i}:`);
-        console.log(playRound(playerSelection, computerSelection));
-      }
-    }
+    // // run however many rounds and determine a winner for rock, paper, scissors
+    // function game(totalRounds) {
+    //   for (var i = 1; i <= totalRounds; i++) {
+    //     const computerSelection = computerPlay();
+    //     const playerSelection = prompt('Please choose Rock, Paper, or Scissors', 'Rock');
+    //     console.log(`Round ${i}:`);
+    //     console.log(playRound(playerSelection, computerSelection));
+    //   }
+    // }
 
-    // run game and set rounds in function argument
-    game(5);
+    // // run game and set rounds in function argument
+    // game(5);
   </script>
 </body>
 </html>
