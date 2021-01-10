@@ -68,3 +68,7 @@ h1 {
   min-width: 15rem;
   padding: 1rem 2rem;
 }
+
+.hide {
+  display: none;
+}
